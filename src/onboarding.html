@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Onboarding Process</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      let step = 1;
+
+      function showStep(newStep) {
+        document
+          .querySelectorAll(".step")
+          .forEach((el) => el.classList.add("hidden"));
+        document.getElementById(`step-${newStep}`).classList.remove("hidden");
+        step = newStep;
+      }
+
+      function nextStep() {
+        if (step < 3) {
+          showStep(step + 1);
+        }
+      }
+
+      function prevStep() {
+        if (step > 1) {
+          showStep(step - 1);
+        }
+      }
+    </script>
+  </head>
+  <body class="bg-gray-100 flex items-center justify-center min-h-screen">
+    <div class="bg-white p-6 rounded-lg shadow-lg max-w-md w-full">
+      <h1 class="text-2xl font-bold text-gray-800 text-center mb-4">
+        Welcome to Our Platform!
+      </h1>
+
+      <!-- Step 1: Welcome -->
+      <div id="step-1" class="step">
+        <p class="text-gray-600 mb-4 text-center">
+          Let's get started with a few quick steps.
+        </p>
+        <button
+          onclick="nextStep()"
+          class="w-full bg-green-600 text-white p-3 rounded-lg hover:bg-green-700 transition-all duration-100"
+        >
+          Get Started
+        </button>
+      </div>
+
+      <!-- Step 2: User Details -->
+      <div id="step-2" class="step hidden">
+        <label class="block text-gray-600 mb-1">Your Name</label>
+        <input
+          type="text"
+          class="w-full p-2 border rounded mb-3"
+          placeholder="Enter your name"
+        />
+
+        <label class="block text-gray-600 mb-1">Email</label>
+        <input
+          type="email"
+          class="w-full p-2 border rounded mb-3"
+          placeholder="Enter your email"
+        />
+
+        <div class="flex justify-between">
+          <button
+            onclick="prevStep()"
+            class="bg-gray-300 text-gray-700 p-2 rounded"
+          >
+            Back
+          </button>
+          <button
+            onclick="nextStep()"
+            class="bg-green-600 text-white p-2 rounded hover:bg-green-700 transition-all duration-100"
+          >
+            Next
+          </button>
+        </div>
+      </div>
+
+      <!-- Step 3: Feature Overview -->
+      <div id="step-3" class="step hidden">
+        <p class="text-gray-600 mb-4">
+          Here's what you can do with our platform:
+        </p>
+        <ul class="list-disc pl-5 mb-4 text-gray-700">
+          <li>Shop from top designers</li>
+          <li>Customize your orders</li>
+          <li>Track your deliveries in real-time</li>
+        </ul>
+        <a href="./new_user.html"
+          ><button
+            class="w-full bg-green-600 text-white p-3 rounded-lg hover:bg-green-700"
+          >
+            Finish
+          </button></a
+        >
+      </div>
+    </div>
+  </body>
+</html>

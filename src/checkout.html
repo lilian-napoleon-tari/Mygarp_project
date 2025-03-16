@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="./output.css" rel="stylesheet" />
+    <title>Login Page</title>
+    <!-- Boxicons -->
+    <link
+      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <header>
+      <!-- Top -->
+      <div class="bg-deep_green h-7"></div>
+
+      <!-- nav section -->
+      <nav class="flex justify-between items-center px-16 text-deep_green py-3">
+        <!-- Logo -->
+        <a href="#" class="font-Roboto_Mono text-4xl font-semibold">MyGarp</a>
+
+        <!-- Nav Items-->
+        <ul class="uppercase flex space-x-7 font-Poppins">
+          <li>
+            <a href="./index.html" class="hover:text-deep_green/75">Home</a>
+          </li>
+          <li>
+            <a href="./how-it-works.html" class="hover:text-deep_green/75"
+              >How It Works</a
+            >
+          </li>
+          <li>
+            <a href="./features.html" class="hover:text-deep_green/75"
+              >Features</a
+            >
+          </li>
+          <li>
+            <a href="./contact.html" class="hover:text-deep_green/75"
+              >Contact</a
+            >
+          </li>
+        </ul>
+
+        <!-- Button -->
+        <div class="flex items-center gap-2">
+          <!-- Cart Icon -->
+          <a href="./">
+            <img
+              src="../assets/images/cart_icon.png"
+              alt="Shopping Cart"
+              width="32px"
+              height="32px"
+              class="flex justify-center items-center m-auto"
+            />
+          </a>
+
+          <div class="space-x-2">
+            <!-- Login button -->
+            <a href="./login.html">
+              <button
+                class="uppercase border-2 border-deep_green px-7 py-2 rounded-lg"
+              >
+                log in
+              </button>
+            </a>
+
+            <!-- Sign up button -->
+            <a href="./signup.html">
+              <button
+                class="uppercase bg-deep_green text-white px-6 py-2 rounded-lg"
+              >
+                sign up
+              </button>
+            </a>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <body class="bg-gray-100">
+      <div>
+        <div class="container mx-auto p-4">
+          <div class="max-w-4xl mx-auto bg-white p-6 rounded-lg shadow-md">
+            <h2 class="text-2xl font-semibold text-gray-700 mb-4">Checkout</h2>
+
+            <!-- Shipping Information -->
+            <div class="mb-6">
+              <h3 class="text-lg font-medium text-gray-600">Shipping Address</h3>
+              <input type="text" placeholder="Full Name" class="w-full p-2 border rounded mt-2">
+              <input type="text" placeholder="Street Address" class="w-full p-2 border rounded mt-2">
+              <input type="text" placeholder="City" class="w-full p-2 border rounded mt-2">
+              <input type="text" placeholder="Postal Code" class="w-full p-2 border rounded mt-2">
+            </div>
+
+            <!-- Payment Section -->
+            <div class="mb-6">
+              <h3 class="text-lg font-medium text-gray-600">Payment Details</h3>
+              <input type="text" placeholder="Card Number" class="w-full p-2 border rounded mt-2">
+              <div class="flex space-x-2 mt-2">
+                <input type="text" placeholder="MM/YY" class="w-1/2 p-2 border rounded">
+                <input type="text" placeholder="CVC" class="w-1/2 p-2 border rounded">
+              </div>
+            </div>
+
+            <!-- Order Summary -->
+            <div class="mb-6">
+              <h3 class="text-lg font-medium text-gray-600">Order Summary</h3>
+              <div class="flex justify-between text-gray-700 mt-2">
+                <span>Subtotal:</span>
+                <span>$174.97</span>
+              </div>
+              <div class="flex justify-between text-gray-700 mt-2">
+                <span>Shipping:</span>
+                <span>$5.00</span>
+              </div>
+              <div class="flex justify-between font-semibold text-gray-900 mt-2">
+                <span>Total:</span>
+                <span>$179.97</span>
+              </div>
+            </div>
+
+            <!-- Checkout Button -->
+            <button id="checkoutButton" class="w-full bg-blue-600 text-white p-3 rounded-lg hover:bg-blue-700">Complete Purchase</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Success Modal -->
+      <div id="successModal" class="hidden fixed inset-0 flex items-center justify-center bg-black bg-opacity-50">
+        <div class="bg-white p-6 rounded-lg shadow-lg text-center max-w-sm">
+          <i class="bx bx-check-circle text-green-500 text-5xl"></i>
+          <h2 class="text-xl font-semibold text-gray-800 mt-3">Purchase Successful!</h2>
+          <p class="text-gray-600 mt-2">Thank you for your order. Your payment has been processed successfully.</p>
+          <div class="mt-4 flex justify-center space-x-3">
+            <a href="./checkout.html" class="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700">Close</a>
+          </div>
+        </div>
+      </div>
+
+      <script>
+        document.getElementById("checkoutButton").addEventListener("click", function(event) {
+          event.preventDefault(); // Prevent form submission
+          document.getElementById("successModal").classList.remove("hidden");
+          setTimeout(() => {
+            window.location.href = "./index.html"; // Redirect after 3 seconds
+          }, 3000);
+        });
+      </script>
+    </body>
+</html>

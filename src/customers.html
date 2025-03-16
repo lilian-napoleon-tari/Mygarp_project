@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="./output.css" rel="stylesheet" />
+    <title>Profile</title>
+    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
+</head>
+<body class="flex">
+    <!-- Menu Icon -->
+    <div class="absolute top-4 right-4 z-50 cursor-pointer text-3xl lg:hidden" id="menu-toggle">
+        <i class='bx bx-menu'></i>
+    </div>
+    
+    <!-- Sidebar -->
+    <aside id="sidebar" class="bg-deep_green text-white text-lg font-Poppins capitalize w-[280px] h-screen fixed left-0 top-0 transition-transform duration-300 px-6 py-4 flex flex-col gap-32 rounded-r-lg lg:translate-x-0 -translate-x-full">
+        <a href="./home/">
+            <img src="../assets/images/mygarp_logo.png" alt="MyGarp Logo" />
+        </a>
+        <ul class="space-y-9 ml-2 capitalize">
+            <li class="flex space-x-2 items-center">
+                <img src="../assets/images/home_icon.png" alt="Home Icon" width="24" height="24" />
+                <a href="./home.html">home</a>
+            </li>
+            <li class="flex space-x-2 items-center">
+                <img src="../assets/images/customer_icon.png" alt="Customers icon" width="24" height="24" />
+                <a href="./admin.html">dashboard</a>
+            </li>
+            <li class="flex space-x-2 items-center">
+                <img src="../assets/images/home_icon.png" alt="Home Icon" width="24" height="24" />
+                <a href="./customers.html">customers</a>
+            </li>
+            <li class="flex space-x-2 items-center">
+                <img src="../assets/images/home_icon.png" alt="Reports Icon" width="24" height="24" />
+                <a href="./activities.html">activities</a>
+            </li>
+            <li class="flex space-x-2 items-center">
+                <img src="../assets/images/home_icon.png" alt="Reports Icon" width="24" height="24" />
+                <a href="./report.html">report</a>
+            </li>
+        </ul>
+        <ul class="space-y-9 ml-2">
+            <li class="flex space-x-2 items-center">
+                <img src="../assets/images/setting_icon.png" alt="Settings Icon" width="24" height="24" />
+                <a href="./settings.html">settings</a>
+            </li>
+            <li class="flex space-x-2 items-center">
+                <img src="../assets/images/log_out.png" alt="Log Out icon" width="24" height="24" />
+                <a href="./log_out.html">log out</a>
+            </li>
+        </ul>
+    </aside>
+    
+    <!-- Main Content -->
+    <main class="flex-1 p-6 ml-0 lg:ml-[280px] transition-all duration-300">
+        <h1 class="text-3xl font-bold mb-6">Customers</h1>
+        <div class="mb-4">
+            <input type="text" id="search" class="w-full p-2 border border-gray-300 rounded" placeholder="Search customers...">
+        </div>
+        <div class="bg-white p-6 rounded shadow">
+            <h2 class="text-2xl font-bold mb-4">Customer List</h2>
+            <table class="w-full border-collapse border border-gray-200">
+                <thead>
+                    <tr class="bg-gray-100">
+                        <th class="border border-gray-300 p-2">Customer Name</th>
+                        <th class="border border-gray-300 p-2">Email</th>
+                        <th class="border border-gray-300 p-2">Phone</th>
+                        <th class="border border-gray-300 p-2">Status</th>
+                    </tr>
+                </thead>
+                <tbody id="customers-table"></tbody>
+            </table>
+        </div>
+    </main>
+    
+    <script>
+        // Sidebar Toggle
+        document.getElementById("menu-toggle").addEventListener("click", function() {
+            document.getElementById("sidebar").classList.toggle("-translate-x-full");
+        });
+        
+        // Sample Customer Data
+        const customers = [
+            { name: "John Doe", email: "john@example.com", phone: "123-456-7890", status: "Active" },
+            { name: "Jane Smith", email: "jane@example.com", phone: "987-654-3210", status: "Inactive" },
+            { name: "Alice Johnson", email: "alice@example.com", phone: "555-123-4567", status: "Active" },
+            { name: "Bob Williams", email: "bob@example.com", phone: "444-987-6543", status: "Active" }
+        ];
+
+        // Populate Customers Table
+        const customersTable = document.getElementById("customers-table");
+        function renderCustomers(filter = "") {
+            customersTable.innerHTML = "";
+            customers
+                .filter(c => c.name.toLowerCase().includes(filter.toLowerCase()))
+                .forEach(customer => {
+                    customersTable.innerHTML += `
+                        <tr class="text-center">
+                            <td class="border border-gray-300 p-2">${customer.name}</td>
+                            <td class="border border-gray-300 p-2">${customer.email}</td>
+                            <td class="border border-gray-300 p-2">${customer.phone}</td>
+                            <td class="border border-gray-300 p-2">${customer.status}</td>
+                        </tr>`;
+                });
+        }
+
+        document.getElementById("search").addEventListener("input", (e) => {
+            renderCustomers(e.target.value);
+        });
+
+        renderCustomers();
+    </script>
+</body>
+</html>

@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="./output.css" rel="stylesheet" />
+    <title>New User</title>
+    <!-- Boxicons -->
+    <link
+      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+  </head>
+  <body class="bg-gray-100">
+    <header
+      class="bg-deep_green text-white p-4 flex justify-between items-center"
+    >
+      <a href="./home/">
+        <img
+          src="../assets/images/mygarp_logo.png"
+          alt="MyGarp Logo"
+          class="h-10"
+        />
+      </a>
+      <button id="menu-toggle" class="text-white text-2xl">
+        <i class="bx bx-menu"></i>
+      </button>
+    </header>
+
+    <nav
+      id="menu"
+      class="hidden bg-deep_green text-white text-lg font-Poppins capitalize w-full flex flex-col px-6 py-4"
+    >
+      <ul class="space-y-4">
+        <li><a href="./home.html">Home</a></li>
+        <li><a href="./Purchase.html">Purchase</a></li>
+        <li><a href="./order_tracking.html">Order Tracking</a></li>
+        <li><a href="./refund.html">Refund</a></li>
+        <li><a href="./measurement.html">Measurement Guide</a></li>
+        <li><a href="./settings.html">Settings</a></li>
+        <li><a href="./log_out.html">Log Out</a></li>
+      </ul>
+    </nav>
+
+    <main class="flex flex-col md:flex-row h-screen w-full">
+      <div class="bg-white shadow-lg p-6 flex-1 h-full">
+        <!-- Profile Header -->
+        <div class="flex items-center space-x-4 border-b pb-4">
+          <img
+            src="https://via.placeholder.com/80"
+            class="w-20 h-20 rounded-full object-cover border-2 border-deep_green"
+            alt="User Profile"
+          />
+          <div>
+            <h2 class="text-xl font-bold">Jane Doe</h2>
+            <p class="text-gray-600">janedoe@example.com</p>
+          </div>
+        </div>
+
+        <!-- Profile Details -->
+        <div class="mt-6">
+          <h3 class="text-lg font-semibold">Profile Information</h3>
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mt-2">
+            <div>
+              <p class="text-gray-500">Phone:</p>
+              <p class="font-medium">+123 456 7890</p>
+            </div>
+            <div>
+              <p class="text-gray-500">Address:</p>
+              <p class="font-medium">123 Fashion St, New York, NY</p>
+            </div>
+            <div>
+              <p class="text-gray-500">Measurements:</p>
+              <p class="font-medium">Bust: 34", Waist: 28", Hips: 38"</p>
+            </div>
+            <div>
+              <p class="text-gray-500">Saved Items:</p>
+              <p class="font-medium">5 items</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Order History -->
+        <div class="mt-8">
+          <h3 class="text-lg font-semibold">Order History</h3>
+          <div class="bg-gray-50 p-4 rounded-lg mt-2">
+            <p class="text-gray-700">No orders yet.</p>
+            <p class="text-sm text-gray-500">
+              Your past orders will be displayed here.
+            </p>
+          </div>
+        </div>
+
+        <!-- Edit Profile Button -->
+        <div class="mt-6 text-center">
+          <button
+            class="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700"
+          >
+            Edit Profile
+          </button>
+        </div>
+      </div>
+    </main>
+
+    <script>
+      document
+        .getElementById("menu-toggle")
+        .addEventListener("click", function () {
+          document.getElementById("menu").classList.toggle("hidden");
+        });
+    </script>
+  </body>
+</html>

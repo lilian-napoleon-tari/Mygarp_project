@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="./output.css" rel="stylesheet" />
+    <title>Profile</title>
+    <!-- Boxicons -->
+    <link
+      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+  </head>
+  <body class="font-Poppins">
+    <!-- Header with Menu Button -->
+    <header
+      class="bg-deep_green text-white p-4 flex justify-between items-center md:hidden"
+    >
+      <button id="menu-toggle" class="text-white text-2xl">
+        <i class="bx bx-menu"></i>
+      </button>
+      <h1 class="text-xl font-bold">Admin Dashboard</h1>
+    </header>
+
+    <div class="flex">
+      <!-- Sidebar -->
+      <aside
+        id="sidebar"
+        class="bg-deep_green text-white text-lg capitalize w-64 h-screen fixed md:relative transform -translate-x-full md:translate-x-0 transition-transform duration-300 z-50 p-6 space-y-32"
+      >
+        <div class="flex justify-between items-center mb-6">
+          <a href="./home/">
+            <img src="../assets/images/mygarp_logo.png" alt="MyGarp Logo" />
+          </a>
+        </div>
+
+        <!-- Middle -->
+        <ul class="space-y-6">
+          <li class="flex space-x-2 items-center">
+            <img
+              src="../assets/images/home_icon.png"
+              alt="Home Icon"
+              width="24"
+              height="24"
+            />
+            <a href="./home.html">home</a>
+          </li>
+          <li class="flex space-x-2 items-center">
+            <img
+              src="../assets/images/customer_icon.png"
+              alt="Customers icon"
+              width="24"
+              height="24"
+            />
+            <a href="./admin.html">dashboard</a>
+          </li>
+          <li class="flex space-x-2 items-center">
+            <img
+              src="../assets/images/home_icon.png"
+              alt="Home Icon"
+              width="24"
+              height="24"
+            />
+            <a href="./customers.html">customers</a>
+          </li>
+          <li class="flex space-x-2 items-center">
+            <img
+              src="../assets/images/home_icon.png"
+              alt="Reports Icon"
+              width="24"
+              height="24"
+            />
+            <a href="./activities.html">activities</a>
+          </li>
+          <li class="flex space-x-2 items-center">
+            <img
+              src="../assets/images/home_icon.png"
+              alt="Reports Icon"
+              width="24"
+              height="24"
+            />
+            <a href="./report.html">report</a>
+          </li>
+        </ul>
+
+        <!-- Bottom -->
+        <ul class="space-y-6 mt-10">
+          <li class="flex space-x-2 items-center">
+            <img
+              src="../assets/images/setting_icon.png"
+              alt="Settings Icon"
+              width="24"
+              height="24"
+            />
+            <a href="./settings.html">settings</a>
+          </li>
+          <li class="flex space-x-2 items-center">
+            <img
+              src="../assets/images/log_out.png"
+              alt="Log Out icon"
+              width="24"
+              height="24"
+            />
+            <a href="./log_out.html">log out</a>
+          </li>
+        </ul>
+      </aside>
+
+      <!-- Main Content -->
+      <main class="flex-1 p-6 transition-all duration-300">
+        <h1 class="text-3xl font-bold mb-6">Admin Activities</h1>
+
+        <!-- Activities Log -->
+        <div class="bg-white p-6 rounded shadow">
+          <h2 class="text-2xl font-bold mb-4">Recent Activities</h2>
+          <table class="w-full border-collapse border border-gray-200">
+            <thead>
+              <tr class="bg-gray-100">
+                <th class="border border-gray-300 p-2">Activity</th>
+                <th class="border border-gray-300 p-2">Admin</th>
+                <th class="border border-gray-300 p-2">Timestamp</th>
+              </tr>
+            </thead>
+            <tbody id="activities-table">
+              <!-- Activities will be inserted here by JavaScript -->
+            </tbody>
+          </table>
+        </div>
+      </main>
+    </div>
+
+    <script>
+      const menuToggle = document.getElementById("menu-toggle");
+      const closeSidebar = document.getElementById("close-sidebar");
+      const sidebar = document.getElementById("sidebar");
+
+      menuToggle.addEventListener("click", function () {
+        sidebar.classList.toggle("-translate-x-full");
+      });
+
+      closeSidebar.addEventListener("click", function () {
+        sidebar.classList.add("-translate-x-full");
+      });
+
+      const activities = [
+        {
+          action: "Logged in",
+          admin: "Admin1",
+          timestamp: "2025-03-15 08:30 AM",
+        },
+        {
+          action: "Updated Product Details",
+          admin: "Admin2",
+          timestamp: "2025-03-15 09:10 AM",
+        },
+        {
+          action: "Deleted User Account",
+          admin: "Admin3",
+          timestamp: "2025-03-15 09:45 AM",
+        },
+        {
+          action: "Processed Refund",
+          admin: "Admin1",
+          timestamp: "2025-03-15 10:15 AM",
+        },
+        {
+          action: "Added New Product",
+          admin: "Admin2",
+          timestamp: "2025-03-15 11:00 AM",
+        },
+      ];
+
+      const activitiesTable = document.getElementById("activities-table");
+      activities.forEach((activity) => {
+        activitiesTable.innerHTML += `
+                <tr class="text-center">
+                    <td class="border border-gray-300 p-2">${activity.action}</td>
+                    <td class="border border-gray-300 p-2">${activity.admin}</td>
+                    <td class="border border-gray-300 p-2">${activity.timestamp}</td>
+                </tr>`;
+      });
+    </script>
+  </body>
+</html>

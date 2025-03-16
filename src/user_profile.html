@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="./output.css" rel="stylesheet" />
+    <title>Profile</title>
+    <!-- Boxicons -->
+    <link
+      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+  </head>
+  <body class="bg-gray-100">
+    
+
+    <main class="flex">
+      <!-- Sidebar -->
+      <aside class="bg-deep_green text-white text-lg font-Poppins capitalize w-[280px] rounded-r-lg flex flex-col gap-32 px-6 py-4 h-screen">
+        <a href="./home/">
+          <!-- Logo -->
+          <img src="../assets/images/mygarp_logo.png" alt="MyGarp Logo" />
+        </a>
+    
+        <!-- Middle -->
+        <ul class="space-y-9 ml-2 capitalize">
+          <li class="flex space-x-2 items-center">
+            <img src="../assets/images/home_icon.png" alt="Home Icon" width="24" height="24" />
+            <a href="./home.html">Home</a>
+          </li>
+          <li class="flex space-x-2 items-center">
+            <img src="../assets/images/customer_icon.png" alt="Customers icon" width="24" height="24" />
+            <a href="./Purchase.html">Purchase</a>
+          </li>
+
+          <li class="flex space-x-2 items-center">
+            <img src="../assets/images/home_icon.png" alt="Home Icon" width="24" height="24" />
+            <a href="./order_tracking.html">order Tracking</a>
+          </li>
+          
+          <li class="flex space-x-2 items-center">
+            <img src="../assets/images/home_icon.png" alt="Reports Icon" width="24" height="24" />
+            <a href="./refund.html">refund</a>
+          </li>
+
+          <li class="flex space-x-2 items-center">
+            <img src="../assets/images/home_icon.png" alt="Reports Icon" width="24" height="24" />
+            <a href="./measurement.html">measurement guide</a>
+          </li>
+        </ul>
+    
+        <!-- Bottom -->
+        <ul class="space-y-9 ml-2">
+          <li class="flex space-x-2 items-center">
+            <img src="../assets/images/setting_icon.png" alt="Settings Icon" width="24" height="24" />
+            <a href="./settings.html">settings</a>
+          </li>
+          <li class="flex space-x-2 items-center">
+            <img src="../assets/images/log_out.png" alt="Log Out icon" width="24" height="24" />
+            <a href="./log_out.html">log out</a>
+          </li>
+        </ul>
+      </aside>
+    
+      <!-- Main Content -->
+      <section class="flex-1 bg-white shadow-lg rounded-lg p-6 h-screen">
+        <!-- Profile Header -->
+        <div class="flex items-center space-x-4 border-b pb-4">
+          <img class="w-20 h-20 rounded-full object-cover" src="../assets/images/profile_photo.png" alt="User Profile" />
+          <div>
+            <h2 class="text-xl font-bold">Jane Doe</h2>
+            <p class="text-gray-600">janedoe@example.com</p>
+          </div>
+        </div>
+    
+        <!-- Profile Details -->
+        <div class="mt-6">
+          <h3 class="text-lg font-semibold">Profile Information</h3>
+          <div class="grid grid-cols-2 gap-4 mt-2">
+            <div>
+              <p class="text-gray-500">Phone:</p>
+              <p class="font-medium">+123 456 7890</p>
+            </div>
+            <div>
+              <p class="text-gray-500">Address:</p>
+              <p class="font-medium">123 Fashion St.</p>
+            </div>
+            <div>
+              <p class="text-gray-500">Measurements:</p>
+              <p class="font-medium">Chest: 38" | Waist: 32" | Hips: 40"</p>
+            </div>
+            <div>
+              <p class="text-gray-500">Saved Items:</p>
+              <p class="font-medium">8 Items</p>
+            </div>
+          </div>
+        </div>
+    
+        <!-- Order History -->
+        <div class="mt-6">
+          <h3 class="text-lg font-semibold">Order History</h3>
+          <div class="space-y-2 mt-2">
+            <div class="bg-gray-50 p-4 rounded-lg">
+              <p class="text-gray-700">Order #12345 - Delivered</p>
+              <p class="text-sm text-gray-500">3 Items | $120.00 | Jan 15, 2025</p>
+            </div>
+            <div class="bg-gray-50 p-4 rounded-lg">
+              <p class="text-gray-700">Order #12346 - Delivered</p>
+              <p class="text-sm text-gray-500">5 Items | $150.99 | Feb 6, 2025</p>
+            </div>
+            <div class="bg-gray-50 p-4 rounded-lg">
+              <p class="text-gray-700">Order #12347 - Processing</p>
+              <p class="text-sm text-gray-500">9 Items | $1000.00 | Mar 10, 2025</p>
+            </div>
+            
+          </div>
+        </div>
+    
+        <!-- Edit Profile Button -->
+        <div class="mt-6 text-center">
+          <button class="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700">Edit Profile</button>
+        </div>
+      </section>
+    </main> 
+    
+
+    <footer class="bg-deep_green text-light_green font-Poppins py-10 px-32">
+      <!-- top -->
+      <div class="flex justify-around">
+        <!-- First -->
+        <div class="space-y-3">
+          <h2 class="text-white text-4xl">MyGarp</h2>
+          <p class="text-white font-Roboto_slab">Social Media</p>
+
+          <!-- Icons -->
+          <div class="flex space-x-2">
+            <!-- facebook icon -->
+            <img
+              src="../assets/images/facebook.png"
+              alt="Facebook Icon"
+              class="w-[28px] h-[28px]"
+            />
+
+            <!-- twitter icon -->
+            <img
+              src="../assets/images/Twitter.png"
+              alt="Twitter Icon"
+              class="w-[28px] h-[28px]"
+            />
+
+            <!-- instagram icon -->
+            <img
+              src="../assets/images/Instagram.png"
+              alt="Instagram Icon"
+              class="w-[28px] h-[28px]"
+            />
+          </div>
+        </div>
+
+        <!-- second -->
+        <div>
+          <h2 class="font-Roboto_slab text-white uppercase mb-4">shop</h2>
+          <ul class="capitalize font-Poppins space-y-2">
+            <li>
+              <a href="./product.html">products</a>
+            </li>
+            <li>
+              <a href="./overview.html">overview</a>
+            </li>
+            <li>
+              <a href="./pricing.html">pricing</a>
+            </li>
+            <li>
+              <a href="./releases.html">releases</a>
+            </li>
+          </ul>
+        </div>
+
+        <!-- third -->
+        <div>
+          <h2 class="uppercase font-Roboto_slab text-white mb-4">company</h2>
+          <ul class="capitalize font-Poppins space-y-2">
+            <li>
+              <a href="./about_us.html">about us</a>
+            </li>
+            <li>
+              <a href="./contact.html">contact</a>
+            </li>
+            <li>
+              <a href="./news.html">news</a>
+            </li>
+            <li>
+              <a href="./support.html">support</a>
+            </li>
+          </ul>
+        </div>
+
+        <!-- fourth -->
+        <div>
+          <h2 class="uppercase font-Roboto_slab text-white mb-3">
+            stay up to date
+          </h2>
+          <div class="border-2 border-light_green">
+            <input
+              type="email"
+              placeholder="Enter Your Email"
+              class="bg-transparent w-[250px] h-full placeholder:text-white"
+            />
+
+            <button
+              type="submit"
+              class="bg-light_green text-deep_green w-[115px] h-[37px] uppercase"
+            >
+              submit
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- bottom -->
+      <div class="flex mt-4 space-x-3 justify-center">
+        <!-- green line -->
+        <div class="border-t-2 border-green-400 w-[889px] mt-3.5"></div>
+
+        <ul class="capitalize flex space-x-7 font-Poppins text-white">
+          <li>
+            <a href="./terms.html">terms</a>
+          </li>
+          <li>
+            <a href="./privacy.html">privacy</a>
+          </li>
+          <li>
+            <a href="./cookies.html">cookies</a>
+          </li>
+        </ul>
+      </div>
+    </footer>
+  </body>
+</html>

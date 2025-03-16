@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="./output.css" rel="stylesheet" />
+    <title>Designers Page</title>
+    <!-- Boxicons -->
+    <link
+      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+  </head>
+  <header class="w-full">
+    <!-- Top Green Bar -->
+    <div class="bg-deep_green h-7"></div>
+
+    <!-- Navigation -->
+    <nav
+      class="flex justify-between items-center px-6 md:px-16 text-deep_green py-3 relative"
+    >
+      <!-- Logo -->
+      <a href="#" class="font-Roboto_Mono text-3xl md:text-4xl font-semibold"
+        >MyGarp</a
+      >
+
+      <!-- Desktop Nav Items -->
+      <ul
+        id="nav-menu"
+        class="uppercase hidden md:flex space-x-6 font-Poppins text-lg"
+      >
+        <li>
+          <a href="./index.html" class="hover:text-deep_green/75">Home</a>
+        </li>
+        <li>
+          <a href="./how-it-works.html" class="hover:text-deep_green/75"
+            >How It Works</a
+          >
+        </li>
+        <li>
+          <a href="./features.html" class="hover:text-deep_green/75"
+            >Features</a
+          >
+        </li>
+        <li>
+          <a href="./contact.html" class="hover:text-deep_green/75">Contact</a>
+        </li>
+      </ul>
+
+      <!-- Right Side: Cart, Buttons, & Mobile Menu -->
+      <div class="flex items-center gap-4">
+        <!-- Cart Icon (Hidden on Mobile) -->
+        <button id="menu-btn" class="md:hidden lg:hidden">
+          <i class="bx bx-menu" style="color: #224f34"></i>
+        </button>
+
+        <!-- Login & Sign Up Buttons (Hidden on Mobile) -->
+        <div class="space-x-2 hidden md:flex">
+          <a href="./login.html">
+            <button
+              class="uppercase border-2 border-deep_green px-5 py-2 rounded-lg text-sm"
+            >
+              log in
+            </button>
+          </a>
+          <a
+            href="./index.html"
+            class="uppercase bg-deep_green text-white px-5 py-2 rounded-lg text-sm"
+          >
+            sign up
+          </a>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Mobile Menu (Initially Hidden) -->
+    <div
+      id="mobile-menu"
+      class="hidden absolute top-20 left-0 w-full bg-white shadow-md md:hidden"
+    >
+      <ul
+        class="uppercase flex flex-col items-center space-y-4 py-4 font-Poppins"
+      >
+        <li>
+          <a href="./index.html" class="hover:text-deep_green/75">Home</a>
+        </li>
+        <li>
+          <a href="./how-it-works.html" class="hover:text-deep_green/75"
+            >How It Works</a
+          >
+        </li>
+        <li>
+          <a href="./features.html" class="hover:text-deep_green/75"
+            >Features</a
+          >
+        </li>
+        <li>
+          <a href="./contact.html" class="hover:text-deep_green/75">Contact</a>
+        </li>
+        <div class="flex flex-col space-y-2">
+          <a href="./login.html">
+            <button
+              class="uppercase border-2 border-deep_green px-5 py-2 rounded-lg text-sm"
+            >
+              log in
+            </button>
+          </a>
+          <a
+            href="./index.html"
+            class="uppercase bg-deep_green text-white px-5 py-2 rounded-lg text-sm"
+          >
+            sign up
+          </a>
+        </div>
+      </ul>
+    </div>
+
+    <!-- Mobile Menu Toggle Script -->
+    <script>
+      const menuBtn = document.getElementById("menu-btn");
+      const mobileMenu = document.getElementById("mobile-menu");
+
+      menuBtn.addEventListener("click", () => {
+        mobileMenu.classList.toggle("hidden");
+      });
+    </script>
+  </header>
+
+
+  <body class="bg-green-100">
+    <div class="container mx-auto py-12 px-6">
+      <h2 class="text-center text-2xl font-bold text-green-900 mb-8">
+        Meet Our Experienced Designers
+      </h2>
+
+      <div class="grid md:grid-cols-2 gap-8">
+        <!-- Designer Card 1 -->
+        <div class="bg-green-200 p-6 rounded-lg shadow-md">
+          <img
+            src="../assets/images/designer1.png"
+            alt="Kelvin Joshua"
+            class="object-cover rounded-lg"
+          />
+          <h3 class="mt-4 text-lg font-semibold text-green-900">
+            Kelvin Joshua
+          </h3>
+          <p class="text-gray-700">Experience: 5 years</p>
+          <p class="text-gray-700">
+            Specialization: Groom Wear, Suits, Native Wears, Shirts, Trousers
+          </p>
+          <p class="text-gray-700">Alteration & Repair.</p>
+          <p class="text-gray-700">Ratings: Excellent</p>
+          <div class="mt-4 flex gap-2">
+            <button class="bg-green-900 text-white px-4 py-2 rounded">
+              BOOK NOW
+            </button>
+            <a href="./designers_profile.html"
+              ><button class="bg-green-800 text-white px-4 py-2 rounded">
+                KNOW MORE
+              </button></a
+            >
+          </div>
+        </div>
+
+        <!-- Designer Card 2 -->
+        <div class="bg-green-200 p-6 rounded-lg shadow-md">
+          <img
+            src="../assets/images/designer2.png"
+            alt="Designer"
+            class="object-cover rounded-lg"
+          />
+          <h3 class="mt-4 text-lg font-semibold text-green-900">
+            Lila Freeman
+          </h3>
+          <p class="text-gray-700">Experience: 9 years</p>
+          <p class="text-gray-700">
+            Specialization: Groom Wear, Suits, Native Wears, Shirts, Trousers
+          </p>
+          <p class="text-gray-700">Alteration & Repair.</p>
+          <p class="text-gray-700">Ratings: Excellent</p>
+          <div class="mt-4 flex gap-2">
+            <button class="bg-green-900 text-white px-4 py-2 rounded">
+              BOOK NOW
+            </button>
+            <a href="./designers_profile.html"
+              ><button class="bg-green-800 text-white px-4 py-2 rounded">
+                KNOW MORE
+              </button></a>
+          </div>
+        </div>
+
+        <!-- Designer Card 3 -->
+        <div class="bg-green-200 p-6 rounded-lg shadow-md">
+          <img
+            src="../assets/images/designer3.png"
+            alt="Designer"
+            class="object-cover rounded-lg"
+          />
+          <h3 class="mt-4 text-lg font-semibold text-green-900">
+            Willow Henderson
+          </h3>
+          <p class="text-gray-700">Experience: 3 years</p>
+          <p class="text-gray-700">
+            Specialization: Groom Wear, Suits, Native Wears, Shirts, Trousers
+          </p>
+          <p class="text-gray-700">Alteration & Repair.</p>
+          <p class="text-gray-700">Ratings: Excellent</p>
+          <div class="mt-4 flex gap-2">
+            <button class="bg-green-900 text-white px-4 py-2 rounded">
+              BOOK NOW
+            </button>
+            <a href="./designers_profile.html"
+            ><button class="bg-green-800 text-white px-4 py-2 rounded">
+              KNOW MORE
+            </button></a>
+          </div>
+        </div>
+
+        <!-- Designer Card 4-->
+        <div class="bg-green-200 p-6 rounded-lg shadow-md">
+          <img
+            src="../assets/images/designer4.png"
+            alt="Designer"
+            class="object-cover rounded-lg"
+          />
+          <h3 class="mt-4 text-lg font-semibold text-green-900">
+            Trevor Jackson
+          </h3>
+          <p class="text-gray-700">Experience: 7 years</p>
+          <p class="text-gray-700">
+            Specialization: Groom Wear, Suits, Native Wears, Shirts, Trousers
+          </p>
+          <p class="text-gray-700">Alteration & Repair.</p>
+          <p class="text-gray-700">Ratings: Excellent</p>
+          <div class="mt-4 flex gap-2">
+            <button class="bg-green-900 text-white px-4 py-2 rounded">
+              BOOK NOW
+            </button>
+            <a href="./designers_profile.html"
+              ><button class="bg-green-800 text-white px-4 py-2 rounded">
+                KNOW MORE
+              </button></a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <footer class="bg-deep_green text-light_green font-Poppins py-10 px-6 md:px-16 lg:px-32">
+      <!-- Top Section -->
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 text-center md:text-left">
+        
+        <!-- First Column: Logo & Social Media -->
+        <div class="space-y-3">
+          <h2 class="text-white text-3xl md:text-4xl">MyGarp</h2>
+          <p class="text-white font-Roboto_slab">Social Media</p>
+    
+          <!-- Icons -->
+          <div class="flex justify-center md:justify-start space-x-2">
+            <img src="../assets/images/facebook.png" alt="Facebook Icon" class="w-7 h-7" />
+            <img src="../assets/images/Twitter.png" alt="Twitter Icon" class="w-7 h-7" />
+            <img src="../assets/images/Instagram.png" alt="Instagram Icon" class="w-7 h-7" />
+          </div>
+        </div>
+    
+        <!-- Second Column: Shop -->
+        <div>
+          <h2 class="font-Roboto_slab text-white uppercase mb-3">shop</h2>
+          <ul class="capitalize space-y-2">
+            <li><a href="./product.html" class="hover:text-light_green/80">products</a></li>
+            <li><a href="./overview.html" class="hover:text-light_green/80">overview</a></li>
+            <li><a href="./pricing.html" class="hover:text-light_green/80">pricing</a></li>
+            <li><a href="./releases.html" class="hover:text-light_green/80">releases</a></li>
+          </ul>
+        </div>
+    
+        <!-- Third Column: Company -->
+        <div>
+          <h2 class="uppercase font-Roboto_slab text-white mb-3">company</h2>
+          <ul class="capitalize space-y-2">
+            <li><a href="./about_us.html" class="hover:text-light_green/80">about us</a></li>
+            <li><a href="./contact.html" class="hover:text-light_green/80">contact</a></li>
+            <li><a href="./news.html" class="hover:text-light_green/80">news</a></li>
+            <li><a href="./support.html" class="hover:text-light_green/80">support</a></li>
+          </ul>
+        </div>
+    
+        <!-- Fourth Column: Stay Updated -->
+        <div>
+          <h2 class="uppercase font-Roboto_slab text-white mb-3">stay up to date</h2>
+          <div class="border-2 border-light_green flex flex-col sm:flex-row items-center">
+            <input type="email" placeholder="Enter Your Email"
+              class="bg-transparent w-full sm:w-[180px] px-3 py-2 placeholder:text-white focus:outline-none text-center sm:text-left" />
+            <button type="submit"
+              class="bg-light_green text-deep_green w-full sm:w-[115px] h-[37px] uppercase">
+              submit
+            </button>
+          </div>
+        </div>
+    
+      </div>
+    
+      <!-- Bottom Section -->
+      <div class="mt-6 capitalize">
+        <div class="border-t-2 border-green-400 w-full mx-auto mb-4"></div>
+        <ul class="flex flex-col sm:flex-row justify-center space-y-2 sm:space-y-0 sm:space-x-7 text-white text-center">
+          <li><a href="./terms.html" class="hover:text-light_green/80">terms</a></li>
+          <li><a href="./privacy.html" class="hover:text-light_green/80">privacy</a></li>
+          <li><a href="./cookies.html" class="hover:text-light_green/80">cookies</a></li>
+        </ul>
+      </div>
+    </footer>
+  </body>
+</html>
