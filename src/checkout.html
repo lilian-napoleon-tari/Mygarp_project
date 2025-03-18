@@ -12,17 +12,24 @@
     />
   </head>
   <body>
-    <header>
-      <!-- Top -->
+    <header class="w-full">
+      <!-- Top Green Bar -->
       <div class="bg-deep_green h-7"></div>
 
-      <!-- nav section -->
-      <nav class="flex justify-between items-center px-16 text-deep_green py-3">
+      <!-- Navigation -->
+      <nav
+        class="flex justify-between items-center px-6 md:px-16 text-deep_green py-3 relative"
+      >
         <!-- Logo -->
-        <a href="#" class="font-Roboto_Mono text-4xl font-semibold">MyGarp</a>
+        <a href="#" class="font-Roboto_Mono text-3xl md:text-4xl font-semibold"
+          >MyGarp</a
+        >
 
-        <!-- Nav Items-->
-        <ul class="uppercase flex space-x-7 font-Poppins">
+        <!-- Desktop Nav Items -->
+        <ul
+          id="nav-menu"
+          class="uppercase hidden md:flex space-x-6 font-Poppins text-lg"
+        >
           <li>
             <a href="./index.html" class="hover:text-deep_green/75">Home</a>
           </li>
@@ -43,40 +50,85 @@
           </li>
         </ul>
 
-        <!-- Button -->
-        <div class="flex items-center gap-2">
-          <!-- Cart Icon -->
-          <a href="./">
-            <img
-              src="./images/cart_icon.png"
-              alt="Shopping Cart"
-              width="32px"
-              height="32px"
-              class="flex justify-center items-center m-auto"
-            />
-          </a>
+        <!-- Right Side: Cart, Buttons, & Mobile Menu -->
+        <div class="flex items-center gap-4">
+          <!-- Cart Icon (Hidden on Mobile) -->
+          <button id="menu-btn" class="md:hidden lg:hidden">
+            <i class="bx bx-menu" style="color: #224f34"></i>
+          </button>
 
-          <div class="space-x-2">
-            <!-- Login button -->
+          <!-- Login & Sign Up Buttons (Hidden on Mobile) -->
+          <div class="space-x-2 hidden md:flex">
             <a href="./login.html">
               <button
-                class="uppercase border-2 border-deep_green px-7 py-2 rounded-lg"
+                class="uppercase border-2 border-deep_green px-5 py-2 rounded-lg text-sm"
               >
                 log in
               </button>
             </a>
-
-            <!-- Sign up button -->
-            <a href="./signup.html">
-              <button
-                class="uppercase bg-deep_green text-white px-6 py-2 rounded-lg"
-              >
-                sign up
-              </button>
+            <a
+              href="./index.html"
+              class="uppercase bg-deep_green text-white px-5 py-2 rounded-lg text-sm"
+            >
+              sign up
             </a>
           </div>
         </div>
       </nav>
+
+      <!-- Mobile Menu (Initially Hidden) -->
+      <div
+        id="mobile-menu"
+        class="hidden absolute top-20 left-0 w-full bg-white shadow-md md:hidden"
+      >
+        <ul
+          class="uppercase flex flex-col items-center space-y-4 py-4 font-Poppins"
+        >
+          <li>
+            <a href="./index.html" class="hover:text-deep_green/75">Home</a>
+          </li>
+          <li>
+            <a href="./how-it-works.html" class="hover:text-deep_green/75"
+              >How It Works</a
+            >
+          </li>
+          <li>
+            <a href="./features.html" class="hover:text-deep_green/75"
+              >Features</a
+            >
+          </li>
+          <li>
+            <a href="./contact.html" class="hover:text-deep_green/75"
+              >Contact</a
+            >
+          </li>
+          <div class="flex flex-col space-y-2">
+            <a href="./login.html">
+              <button
+                class="uppercase border-2 border-deep_green px-5 py-2 rounded-lg text-sm"
+              >
+                log in
+              </button>
+            </a>
+            <a
+              href="./index.html"
+              class="uppercase bg-deep_green text-white px-5 py-2 rounded-lg text-sm"
+            >
+              sign up
+            </a>
+          </div>
+        </ul>
+      </div>
+
+      <!-- Mobile Menu Toggle Script -->
+      <script>
+        const menuBtn = document.getElementById("menu-btn");
+        const mobileMenu = document.getElementById("mobile-menu");
+
+        menuBtn.addEventListener("click", () => {
+          mobileMenu.classList.toggle("hidden");
+        });
+      </script>
     </header>
 
     <body class="bg-gray-100">
